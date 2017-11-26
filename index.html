@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- <link rel="icon" href="imgs/avicon.ico"> -->
+
+  <title>Cadastro</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <script src="js/jquery.js">
+    window.$ = window.jQuery = require('jquery');
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Nome do Projeto -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">SisCadastro</a>
+      </div>
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">- Menu - <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Cadastrar-se</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Sobre o Programa</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9">
+        <br><br><br><br><br><br>
+        <div class="row">
+          <!-- Esquerdo -->
+          <div class="col-xs-6 col-md-2"></div>
+          <!-- Meio -->
+          <div class="col-xs-6 col-md-10">
+            <form id="formCadastro">
+              <div class="form-group">
+                <label>Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Seu Email" value="@email.com">
+              </div>
+              <div class="form-group">
+                <label>Senha</label>
+                <input type="cpf" class="form-control" id="cpf" placeholder="Sua CPF">
+              </div>
+              <div class="form-group">
+                <input type="file" id="files" name="files[]" multiple />
+                <output id="list"></output>
+              </div>
+              <br>
+              <button type="button" onclick="Pessoa.capturaDados()" class="btn btn-success">Cadastrar</button>
+              <button type="reset" class="btn btn-danger">Limpar</button>
+              <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".modalListagem" name="button">Ver Cadastros</button>
+            </form>
+          </div>
+          <!-- Direito -->
+          <!-- <div class="col-xs-6 col-md-1"></div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /container -->
+  <!-- MODAIS -->
+  <div class="modal fade modalListagem" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Cadastros</h4>
+        </div>
+        <div class="modal-body">
+          <table id="table" class="table table-hover">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Senha</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="mNome"></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          <button type="button" onclick="javascript:window.print()" class="btn btn-primary">Imprimir</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
